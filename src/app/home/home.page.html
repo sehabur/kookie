@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+        <ion-avatar slot="start">
+            <img class="img-div" src="{{ user.photoURL }}">
+        </ion-avatar>
+        <ion-title class="ion-no-padding">
+            <p class="font-16">My Rewards</p>
+        </ion-title>
+        <ion-icon name="settings" slot="end" class="ion-padding" style="font-size: 24px;" (click)="presentPopover()"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <super-tabs>
+        <super-tabs-toolbar slot="top" color="toptab">
+            <super-tab-button>
+                <ion-label>My Cards</ion-label>
+            </super-tab-button>
+            <super-tab-button>
+                <ion-label>Offers</ion-label>
+            </super-tab-button>
+        </super-tabs-toolbar>
+        <super-tabs-container>
+            <super-tab>
+                <ion-nav [root]="MyCardsPage"></ion-nav>
+            </super-tab>
+            <super-tab>
+                <ion-nav [root]="PointsHistoryPage"></ion-nav>
+            </super-tab>
+        </super-tabs-container>
+    </super-tabs>
+</ion-content>
